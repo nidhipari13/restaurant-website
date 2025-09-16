@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Restaurant - Fine Dining Restaurant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/1307698/pexels-photo-1307698.jpeg') no-repeat center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .menu-item {
+            transition: transform 0.3s ease;
+        }
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+        .hero-text {
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .testimonial-slider {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+        }
+        .testimonial-item {
+            min-width: 100%;
+            transition: transform 0.5s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <nav class="container mx-auto flex items-center justify-between p-4">
+            <div class="text-2xl font-bold text-green-600">My Restaurant</div>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#home" class="text-gray-700 hover:text-green-600 transition">Home</a></li>
+                <li><a href="#about" class="text-gray-700 hover:text-green-600 transition">About</a></li>
+                <li><a href="#menu" class="text-gray-700 hover:text-green-600 transition">Menu</a></li>
+                <li><a href="#testimonials" class="text-gray-700 hover:text-green-600 transition">Testimonials</a></li>
+                <li><a href="#contact" class="text-gray-700 hover:text-green-600 transition">Contact</a></li>
+            </ul>
+            <button id="menu-btn" class="md:hidden text-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+            <ul class="flex flex-col space-y-4 p-4">
+                <li><a href="#home" class="text-gray-700 hover:text-green-600 transition">Home</a></li>
+                <li><a href="#about" class="text-gray-700 hover:text-green-600 transition">About</a></li>
+                <li><a href="#menu" class="text-gray-700 hover:text-green-600 transition">Menu</a></li>
+                <li><a href="#testimonials" class="text-gray-700 hover:text-green-600 transition">Testimonials</a></li>
+                <li><a href="#contact" class="text-gray-700 hover:text-green-600 transition">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg">
+        <div class="text-center text-white hero-text">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">Welcome to My Restaurant</h1>
+            <p class="text-xl md:text-2xl mb-8">Experience the finest culinary delights in an elegant atmosphere</p>
+            <a href="#menu" class="bg-green-600 text-white px-8 py-4 rounded-full hover:bg-green-700 transition">Explore Our Menu</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">About Us</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://images.pexels.com/photos/1537635/pexels-photo-1537635.jpeg" alt="Elegant restaurant interior with wooden tables, ambient lighting, and patrons enjoying a gourmet meal in a cozy setting with brick walls and modern chandeliers" class="w-full h-auto rounded-lg shadow-lg" />
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-4">Our Story</h3>
+                    <p class="text-gray-600 mb-4">At My Restaurant, we believe in creating unforgettable dining experiences. Founded in 2010, our passionate team combines traditional techniques with modern innovation to bring you the most exquisite flavors.</p>
+                    <p class="text-gray-600 mb-4">We source only the finest local and organic ingredients to ensure every dish is a masterpiece. Join us for an evening of culinary adventure!</p>
+                    <a href="#contact" class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition">Reserve a Table</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Our Menu</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg menu-item">
+                    <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg" alt="Appetizing grilled salmon steak with asparagus and lemon slices on a white ceramic plate with herb garnish" class="w-full h-48 object-cover mb-4 rounded" />
+                    <h3 class="text-xl font-semibold mb-2">Grilled Salmon</h3>
+                    <p class="text-gray-600 mb-4">Fresh Atlantic salmon grilled to perfection with lemon herb seasoning. Served with seasonal vegetables.</p>
+                    <span class="text-green-600 font-bold">Rs. 200</span>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg menu-item">
+                    <img src="https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg" alt="Rich carbonara pasta with creamy sauce, pancetta, and grated parmesan cheese in a deep bowl with fresh parsley" class="w-full h-48 object-cover mb-4 rounded" />
+                    <h3 class="text-xl font-semibold mb-2">Creamy Carbonara</h3>
+                    <p class="text-gray-600 mb-4">Traditional Italian pasta with a luxurious egg-based sauce, pancetta, and aged parmesan. A comfort classic.</p>
+                    <span class="text-green-600 font-bold">Rs. 150</span>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg menu-item">
+                    <img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg" alt="Decadent chocolate lava cake with molten center, dusted with powdered sugar and accompanied by vanilla ice cream scoop" class="w-full h-48 object-cover mb-4 rounded" />
+                    <h3 class="text-xl font-semibold mb-2">Chocolate Lava Cake</h3>
+                    <p class="text-gray-600 mb-4">Warm chocolate cake with a gooey molten center. Paired with vanilla ice cream for the ultimate dessert.</p>
+                    <span class="text-green-600 font-bold">Rs. 200</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">What Our Guests Say</h2>
+            <div class="testimonial-slider" id="testimonial-slider">
+                <div class="testimonial-item">
+                    <div class="text-center">
+                        <img src="https://images.pexels.com/photos/1408978/pexels-photo-1408978.jpeg" alt="Smiling male guest in casual attire, giving thumbs up gesture indicating approval and satisfaction" class="w-32 h-32 rounded-full mx-auto mb-4" />
+                        <p class="text-gray-600 mb-4 italic">"My Restaurant exceeded all my expectations! The salmon was perfectly cooked, and the atmosphere was magical."</p>
+                        <h4 class="font-semibold">Nidhi, Food Critic</h4>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="text-center">
+                        <img src="https://images.pexels.com/photos/672444/pexels-photo-672444.jpeg" alt="Smiling female guest in elegant dress, gesturing happy approval with wide smile and positive expression" class="w-32 h-32 rounded-full mx-auto mb-4" />
+                        <p class="text-gray-600 mb-4 italic">"An unforgettable dining experience! The service was impeccable, and every bite was heavenly."</p>
+                        <h4 class="font-semibold">Priya, Regular Patron</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center mt-8">
+                <button id="prev-btn" class="px-4 py-2 bg-gray-200 rounded-full mr-4 hover:bg-gray-300">Previous</button>
+                <button id="next-btn" class="px-4 py-2 bg-gray-200 rounded-full hover:bg-gray-300">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Contact Us</h2>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h3 class="text-2xl font-semibold mb-4">Get in Touch</h3>
+                    <p class="text-gray-600 mb-4">Ready to experience My Restaurant? Contact us for reservations or inquiries!</p>
+                    <div class="space-y-2">
+                        <p><strong>Address:</strong> At Jaipur Rajasthan</p>
+                        <p><strong>Phone:</strong> +91 - 8943205793</p>
+                        <p><strong>Email:</strong> info@myrestaurant.com</p>
+                        <p><strong>Hours:</strong> Mon-Fri 5PM-10PM | Sat-Sun: 4PM-11PM</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <form class="bg-white p-6 rounded-lg shadow-lg">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+                            <input type="text" id="name" placeholder="Your Name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                            <input type="email" id="email" placeholder="your.email@example.com" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone</label>
+                            <input type="tel" id="phone" placeholder="(555) 123-4567" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                            <textarea id="message" rows="4" placeholder="Your message here..." class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition font-semibold">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2">My Restaurant</h3>
+                    <p>© 2025 My Restaurant Restaurant. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-green-400 transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-green-400 transition">Terms of Service</a>
+                    <a href="#" class="hover:text-green-400 transition">Social Media</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Testimonial slider
+        const testimonialSlider = document.getElementById('testimonial-slider');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        let currentSlide = 0;
+        const totalSlides = testimonialSlider.children.length;
+
+        function updateSlider() {
+            testimonialSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        });
+    </script>
+</body>
+</html>
+</content>
+</create_file>
